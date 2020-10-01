@@ -1,10 +1,12 @@
 from discord.ext import commands
 import discord
 from constants import *
+import os
 
 with open('allowed_users.txt', 'r', encoding='utf-8') as file:
     allowed_users = file.read().split('\n')
 
+token = str(os.environ.get('token'))
 bot = commands.Bot(command_prefix=prefix)
 main_guild: discord.Guild
 login_channel: discord.TextChannel
